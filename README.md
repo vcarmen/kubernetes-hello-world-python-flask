@@ -17,6 +17,7 @@ This recipe is in the book Practical MLOps.
 ## Get Started
 
 * Create Python virtual environment `python3 -m venv ~/.kube-hello && source ~/.kube-hello/bin/activate`
+* *In Windows*, use `source ~/.kube-hello/Scripts/activate` instead of `source ~/.kube-hello/bin/activate`
 * Run `make all` to install python libraries, lint project, including `Dockerfile` and run tests
 
 ## Build and Run Docker Container
@@ -29,11 +30,13 @@ This recipe is in the book Practical MLOps.
 
 * To verify container run `docker image ls`
 
-* To run do the following:  `docker run -p 8080:8080 flask-change` or run `make run` which has the same command
+* Make sure that port 8080 is open in you local computer, if not, change it to another port. i.e. 8081
+
+* To run do the following:  `docker run -p 8081:8080 flask-change` or run `make run` which has the same command
 
 * In a separate terminal invoke the web service via curl, or run `make invoke` which has the same command 
 
-`curl http://127.0.0.1:8080/change/1/34`
+`curl http://127.0.0.1:8081/change/1/34`
 
 ```bash
 [
@@ -119,7 +122,7 @@ flask-change-7b7d7f467b-fpsxr   1/1     Running   0          6s
 
 * Describe the load balanced service:
 
-`kubectl describe services hello-python-service`
+`kubectl describe services hello-flask-change-service`
 
 You should see output similar to this:
 
