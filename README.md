@@ -127,7 +127,7 @@ flask-change-7b7d7f467b-fpsxr   1/1     Running   0          6s
 You should see output similar to this:
 
 ```bash
-Name:                     hello-python-service
+Name:                     hello-flask-change-service
 Namespace:                default
 Labels:                   <none>
 Annotations:              <none>
